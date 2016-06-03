@@ -85,7 +85,6 @@ def _create_connection(conn_settings):
         conn['replicaSet'] = conn.pop('replicaset')
 
     if (StrictVersion(mongoengine.__version__) >= StrictVersion('0.10.6') and
-        current_app.config['TESTING'] == True and
         conn.get('host', '').startswith('mongomock://')):
         pass
     # Handle uri style connections
